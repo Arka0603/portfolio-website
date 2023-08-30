@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>JavaScript to print Even Numbers within a Range!</title>
+    <style media="screen">
+      body{
+        display:flex;
+        justify-content:center;
+        background-color:#30336b;
+      }
+      form{
+        width:450px;
+        background-color:#fce4ec;
+        box-shadow: 0 5px 21px #d4d4d4;
+        padding:40px;
+        border radius:8px;
+
+      }
+      label{
+        display:block;
+        position:relative;
+        margin-top:25px;
+      }
+      #result{
+        backgroung-color:#f0932b;
+        width:300px;
+        height:100px;
+        margin-top:25px;
+      }
+    </style>
+    <script>
+
+      function printEvenNums(){
+        //get the start and end range from user
+        var start = parseInt(document.getElementById("start").value);
+        var end = parseInt(document.getElementById("end").value);
+        var evenNums = "Even Numbers: ";
+
+        for(i=start; i<=end; i++){
+          // let's divide the value by 2
+          // if the reminder is zero then it's an Even number
+          if(i % 2 == 0 ){
+            evenNums += i + " ";
+          }
+        }
+        //print the values
+        document.getElementById("result").innerHTML = evenNums;
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+    <h3>JavaScript to print Even Numbers within a Range!</h3>
+  <label> Start value: </label><input type="number" min="0" id="start"  />
+      <label> End value: </label ><input type="number" id="end" min="1"  />
+    <label><input type="button" onclick="printEvenNums()" value="Print Even Numbers" /></label>
+    <div >
+    <textarea name="message" id="result" ></textarea></div>
+      </form>
+  </body>
+</html>
